@@ -1,15 +1,13 @@
 function Map({ lat, lon }) {
-	console.log(lat, lon);
-
-	if (!lat || !lon) return null;
-
+	const zoom = 15;
 	return (
-		<div>
-			{/* src="//maps.google.com/maps?q=latitude,longitude&z=zoom&output=embed" */}
-
+		<div className="aspect-square rounded-lg overflow-hidden">
 			<iframe
-				src={`//maps.google.com/maps?q=${lat},${lon}&z=zoom&output=embed`}
-				frameborder="0"
+				src={`https://maps.google.com/maps?q=${lat},${lon}&z=${zoom}&output=embed`}
+				loading="lazy"
+				allowFullScreen
+				referrerPolicy="no-referrer-when-downgrade"
+				className="w-full h-full"
 			></iframe>
 		</div>
 	);

@@ -1,7 +1,15 @@
-import React from 'react';
+function Gallery({ hotel }) {
+	const images = hotel?.images && hotel.images[0].url;
 
-function Gallery({ images }) {
-	return <div>Gallery</div>;
+	return (
+		<div className="aspect-square rounded-lg overflow-hidden">
+			<img
+				src={images}
+				alt={hotel?.name}
+				className="w-full h-full object-cover"
+			/>
+		</div>
+	);
 }
 
 export default Gallery;
