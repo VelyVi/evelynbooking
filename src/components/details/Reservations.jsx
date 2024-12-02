@@ -13,6 +13,7 @@ function Reservations({ hotelId }) {
 		handleSubmit,
 		register,
 		formState: { errors },
+		reset,
 	} = useForm({
 		resolver: zodResolver(schema),
 	});
@@ -21,6 +22,7 @@ function Reservations({ hotelId }) {
 		//Validaciones opcionales
 		dataForm.hotelId = hotelId;
 		console.log(dataForm);
+		reset();
 	};
 
 	return (

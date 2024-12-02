@@ -13,7 +13,7 @@ function Home() {
 
 	return (
 		<div>
-			<section className="max-w-7xl mx-auto px-5 py-10">
+			<section className="max-w-5xl mx-auto px-5 py-10">
 				<HotelsList hotels={hotels} />
 			</section>
 		</div>

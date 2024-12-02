@@ -33,7 +33,7 @@ function Details() {
 			<div className="">
 				<Hero hotel={hotel} />
 			</div>
-			<div className="max-w-5xl mx-auto px-5">
+			<div className="max-w-5xl mx-auto px-5 py-10">
 				<div className="mb-4">
 					<Reservations hotelId={hotel?.id} />
 				</div>
