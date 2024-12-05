@@ -5,7 +5,7 @@ import RatingStars from '../RatingStars';
 
 function HotelCard({ hotel }) {
 	return (
-		<div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-500">
+		<div className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-500">
 			<div className="aspect-[1.4] overflow-hidden">
 				<img
 					className="w-full h-full object-cover overflow-hidden"

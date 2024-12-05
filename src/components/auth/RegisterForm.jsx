@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useAuth } from '../../app/context/auth';
 
 const schema = z.object({
 	firstName: z.string().min(3),
@@ -13,15 +15,21 @@ const schema = z.object({
 });
 
 function RegisterForm() {
+	const { register: createUser } = useAuth();
+	const navigate = useNavigate();
 	const {
 		handleSubmit,
 		register,
 		formState: { errors },
 		reset,
-	} = useForm({ resolver: zodResolver(schema) });
+	} = useForm({ 
+		resolver: zodResolver(schema)
+	 });
 
 	const onSubmit = (dataForm) => {
-		console.log(dataForm);
+		createUser(dataForm)
+		reset()
+		navigate('/login')
 	};
 
 	return (

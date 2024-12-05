@@ -3,6 +3,7 @@ import { Details, Home, Login, Register, Reservations } from '../app';
 import MainLayout from '../layouts/MainLayout';
 import AuthLayouts from '../layouts/AuthLayouts';
 import Protected from './Protected';
+import Public from './Public';
 
 function AppRouter() {
 	return (
@@ -20,7 +21,13 @@ function AppRouter() {
 				/>
 			</Route>
 
-			<Route element={<AuthLayouts />}>
+			<Route
+				element={
+					<Public>
+						<AuthLayouts />
+					</Public>
+				}
+			>
 				<Route path="login" element={<Login />} />
 				<Route path="register" element={<Register />} />
 			</Route>

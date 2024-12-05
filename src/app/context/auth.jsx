@@ -33,6 +33,21 @@ export const useAuth = create((set) => ({
 			});
 		}
 	},
+	register: async ({ firstName, lastName, email, password, gender }) => {
+		set({ status: 'pending' });
+		try {
+			await api.post('users', { firstName, lastName, email, password, gender });
+			set({
+				status: 'resolved',
+				error: null,
+			});
+		} catch (error) {
+			set({
+				status: 'rejected', // Se rechazo
+				error: error?.response?.data?.message || error.message,
+			});
+		}
+	},
 
 	logout: () => {
 		ls.removeItem('token');

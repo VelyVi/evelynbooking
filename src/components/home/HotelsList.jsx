@@ -6,6 +6,8 @@ function HotelsList({ hotels }) {
 			{hotels?.map((hotel) => (
 				<HotelCard key={hotel.id} hotel={hotel} />
 			))}
+
+			{hotels.length === 0 && <p>No reservation found.</p>}
 		</div>
 	);
 }
