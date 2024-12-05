@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useAuth } from '../../app/context/auth';
+import { useNavigate } from 'react-router';
 
 const schema = z.object({
 	email: z.string().email(),
@@ -8,6 +10,8 @@ const schema = z.object({
 });
 
 function LoginForm() {
+	const { login } = useAuth();
+	const navigate = useNavigate();
 	const {
 		handleSubmit,
 		register,
@@ -16,12 +20,14 @@ function LoginForm() {
 	} = useForm({ resolver: zodResolver(schema) });
 
 	const onSubmit = (dataForm) => {
-		console.log(dataForm);
+		login(dataForm);
+		reset();
+		navigate('/');
 	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div>
+			<div className="mb-4">
 				<label className="block font-semibold">Email</label>
 				<input
 					type="email"
@@ -30,9 +36,7 @@ function LoginForm() {
 					{...register('email')}
 				/>
 				{errors.email && (
-					<span className="error-validation block my-4">
-						{errors.email.message}
-					</span>
+					<p className="error-validation">{errors.email.message}</p>
 				)}
 			</div>
 			<div className="mb-4">
@@ -44,12 +48,10 @@ function LoginForm() {
 					{...register('password')}
 				/>
 				{errors.password && (
-					<span className="error-validation block my-4">
-						{errors.password.message}
-					</span>
+					<p className="error-validation">{errors.password.message}</p>
 				)}
 			</div>
-			<button className="btn w-full m">Login</button>
+			<button className="btn w-full m">Sing in</button>
 		</form>
 	);
 }
