@@ -69,7 +69,7 @@ function Details() {
 						<Map lat={hotel?.lat} lon={hotel?.lon} />
 					</div>
 				</div>
-				<Reviews />
+				<Reviews hotelId={hotel?.id} />
 				<RelatedHotels />
 			</div>
 		</div>

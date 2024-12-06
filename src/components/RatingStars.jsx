@@ -21,8 +21,7 @@ function RatingStars({ rating }) {
 						</span>
 					);
 				})}
-			</span>{' '}
-			<span className="text-gray-400">{rating}</span>
+			</span>
 		</div>
 	);
 }

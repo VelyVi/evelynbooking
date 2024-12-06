@@ -16,7 +16,10 @@ function HotelCard({ hotel }) {
 			<div className="p-5">
 				<h2 className="font-semibold text-lg mb-2">{hotel?.name}</h2>
 				<div className="flex flex-col gap-2">
-					<RatingStars rating={hotel?.rating} />
+					<div className="flex items-center gap-2">
+						<RatingStars rating={hotel?.rating} />
+						<span className="text-sm">{hotel?.rating}</span>
+					</div>
 					<span className="flex items-center gap-1">
 						{' '}
 						<IoLocationOutline />
