@@ -66,3 +66,13 @@
 		background-attachment: fixed;
 	}
 }
+
+.image-gallery-slide img {
+	aspect-ratio: 1;
+	object-fit: contain;
+}
+
+.image-gallery-thumbnail img {
+	aspect-ratio: 1;
+	object-fit: contain;
+}

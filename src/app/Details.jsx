@@ -69,11 +69,15 @@ function Details() {
 							description={hotel?.description}
 						/>
 					</div>
-					<div>
-						<Gallery hotel={hotel} />
-					</div>
-					<div>
-						<Map lat={hotel?.lat} lon={hotel?.lon} />
+					<div className="col-span-2">
+						<div className="flex w-full items-center flex-row flex-wrap justify-center gap-5">
+							<div className="flex max-w-[397px]">
+								<Gallery hotel={hotel} />
+							</div>
+							<div className="flex w-[500px]">
+								<Map lat={hotel?.lat} lon={hotel?.lon} />
+							</div>
+						</div>
 					</div>
 				</div>
 
