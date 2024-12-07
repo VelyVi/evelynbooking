@@ -23,7 +23,7 @@ const useHotels = create((set) => {
 			set({ loading: true });
 			try {
 				const res = await api.get(
-					`/hotels${cityId ? '?cityId=${cityId}' : ''}`,
+					`/hotels${cityId ? `?cityId=${cityId}` : ''}`,
 				);
 				set({ hotels: res.data });
 			} catch (error) {
