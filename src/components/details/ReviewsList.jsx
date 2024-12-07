@@ -17,7 +17,7 @@ function ReviewsList({ reviews }) {
 				))}
 			</div>
 			{visibleReviews < reviews?.length && (
-				<div>
+				<div className="flex justify-center">
 					<button className="btn" onClick={loadMore}>
 						Load more
 					</button>

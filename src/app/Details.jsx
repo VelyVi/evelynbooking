@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import useApiFetch from '../hooks/useApiFetch';
 import Reservation from '../components/details/Reservation';
 import RelatedHotels from '../components/details/RelatedHotels';
@@ -47,7 +47,14 @@ function Details() {
 							<p className="flex items-center justify-center gap-1">
 								<MdLockOutline className="size-5" />
 								<span className="text-sm">
-									Please, login to make a reservation.
+									Please,{' '}
+									<Link
+										to="/login"
+										className="hover:text-blue-600 transition-colors duration-400"
+									>
+										login
+									</Link>{' '}
+									to make a reservation.
 								</span>
 							</p>
 						</>
