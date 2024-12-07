@@ -7,5 +7,6 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
 		<AppRouter />
+		{/*	<ToastContainer /> */}
 	</BrowserRouter>,
 );

@@ -22,6 +22,7 @@ function LoginForm() {
 	const onSubmit = (dataForm) => {
 		login(dataForm);
 		reset();
+		/* { toast('User is login');}*/
 		navigate('/');
 	};
 
