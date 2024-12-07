@@ -15,7 +15,7 @@ function Reviews({ hotelId }) {
 
 	return (
 		<div>
-			<h3>Reviews</h3>
+			<h3 className="text-2xl font-semibold text-center mb-4">Reviews</h3>
 			<div>
 				<ReviewsList reviews={reviews?.results} />
 			</div>

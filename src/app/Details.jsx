@@ -54,7 +54,7 @@ function Details() {
 					)}
 				</div>
 				{/*Grid */}
-				<div className="grid grid-cols-2 gap-5">
+				<div className="grid grid-cols-2 gap-5 mb-8">
 					<div className="col-span-2">
 						<Description
 							rating={hotel?.rating}
@@ -69,8 +69,18 @@ function Details() {
 						<Map lat={hotel?.lat} lon={hotel?.lon} />
 					</div>
 				</div>
-				<Reviews hotelId={hotel?.id} />
-				<RelatedHotels />
+
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div>
+						<Reviews hotelId={hotel?.id} />
+					</div>
+
+					<div className="h-full">
+						<div className="sticky top-20">
+							<RelatedHotels cityId={hotel?.cityId} hotelId={hotel?.id} />
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

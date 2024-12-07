@@ -12,7 +12,7 @@ function Hero({ hotel }) {
 		>
 			<div className="grid place-content-center h-full bg-white bg-opacity-50">
 				<div>
-					<h1 className="text-2xl font-semibold text-center mb-2">
+					<h1 className="text-2xl md:text-3xl font-semibold text-center mb-2">
 						{hotel?.name}
 					</h1>
 					<p className="flex items-center justify-center gap-1">
