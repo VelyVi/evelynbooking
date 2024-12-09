@@ -52,6 +52,7 @@ function Reservation({ hotelId }) {
 						<label className="font-semibold text-sm">Check-Out</label>
 						<input
 							type="date"
+							min={today}
 							className="border px-3 py-1 rounded-sm"
 							{...register('checkOut')}
 						/>
