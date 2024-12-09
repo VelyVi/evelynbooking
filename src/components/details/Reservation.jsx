@@ -10,6 +10,8 @@ const schema = z.object({
 	checkOut: z.string().min(1, { message: 'Check-Out is required' }),
 });
 
+const today = new Date().toISOString().split('T')[0];
+
 function Reservation({ hotelId }) {
 	const [data, createReservation] = useApiFetch();
 	const {
@@ -43,6 +45,7 @@ function Reservation({ hotelId }) {
 							type="date"
 							className="border px-3 py-1 rounded-sm"
 							{...register('checkIn')}
+							min={today}
 						/>
 					</div>
 					<div className="flex flex-col items-center">

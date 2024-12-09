@@ -8,6 +8,6 @@ import './index.css';
 createRoot(document.getElementById('root')).render(
 	<BrowserRouter>
 		<AppRouter />
-		<Toaster />
+		<Toaster position="top-right" />
 	</BrowserRouter>,
 );
