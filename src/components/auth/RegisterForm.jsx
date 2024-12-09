@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuth } from '../../app/context/auth';
+import toast from 'react-hot-toast';
 
 const schema = z.object({
 	firstName: z.string().min(3),
@@ -22,14 +23,15 @@ function RegisterForm() {
 		register,
 		formState: { errors },
 		reset,
-	} = useForm({ 
-		resolver: zodResolver(schema)
-	 });
+	} = useForm({
+		resolver: zodResolver(schema),
+	});
 
 	const onSubmit = (dataForm) => {
-		createUser(dataForm)
-		reset()
-		navigate('/login')
+		createUser(dataForm);
+		toast.success('Account successfully created!');
+		reset();
+		navigate('/login');
 	};
 
 	return (

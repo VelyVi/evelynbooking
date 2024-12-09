@@ -1,4 +1,3 @@
-import React from 'react';
 import ReservationCard from './ReservationCard';
 
 function ReservationsList({ reservations, onDelete, onRate }) {

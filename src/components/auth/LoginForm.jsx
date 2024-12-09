@@ -3,6 +3,7 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuth } from '../../app/context/auth';
 import { useNavigate } from 'react-router';
+import toast from 'react-hot-toast';
 
 const schema = z.object({
 	email: z.string().email(),
@@ -21,8 +22,8 @@ function LoginForm() {
 
 	const onSubmit = (dataForm) => {
 		login(dataForm);
+		toast.success('Welcome back!');
 		reset();
-		/* { toast('User is login');}*/
 		navigate('/');
 	};
 

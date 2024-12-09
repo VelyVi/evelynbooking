@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import api from '../services/api';
+import toast from 'react-hot-toast';
 
 const ls = window.localStorage;
 
@@ -60,5 +61,6 @@ export const useAuth = create((set) => ({
 			status: 'idle',
 			error: null,
 		});
+		toast.success('Account closed.');
 	},
 }));

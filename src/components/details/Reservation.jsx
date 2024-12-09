@@ -3,6 +3,7 @@ import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import useApiFetch from '../../hooks/useApiFetch';
 import { cn } from '../../utils';
+import toast from 'react-hot-toast';
 
 const schema = z.object({
 	checkIn: z.string().min(1, { message: 'Check-In is required' }),
@@ -10,7 +11,7 @@ const schema = z.object({
 });
 
 function Reservation({ hotelId }) {
-	const [data,createReservation]=useApiFetch()
+	const [data, createReservation] = useApiFetch();
 	const {
 		handleSubmit,
 		register,
@@ -24,10 +25,11 @@ function Reservation({ hotelId }) {
 		//Validaciones opcionales
 		dataForm.hotelId = hotelId;
 		createReservation({
-			url:'/bookings',
-			method:'POST',
-			body:dataForm
-		})
+			url: '/bookings',
+			method: 'POST',
+			body: dataForm,
+		});
+		toast.success('Reservation succesfully booked!');
 		reset();
 	};
 

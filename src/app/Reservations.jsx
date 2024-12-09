@@ -3,6 +3,7 @@ import useApiFetch from '../hooks/useApiFetch';
 import ReservationsList from '../components/reservations/ReservationsList';
 import Modal from '../components/Modal';
 import Review from '../components/reservations/Review';
+import toast from 'react-hot-toast';
 
 function Reservations() {
 	const [reservations, fetchReservations] = useApiFetch();
@@ -20,6 +21,7 @@ function Reservations() {
 			url: `/bookings/${id}`,
 			method: 'DELETE',
 		});
+		toast.success('Succesfully deleted');
 	};
 
 	const closeModal = () => {
